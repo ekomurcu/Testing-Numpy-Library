@@ -8,6 +8,7 @@ class TestPolyval(unittest.TestCase):
         self.a = [1, 2]
 
     def test_nan(self):
+        #checking for na values
         self.assertTrue(np.isnan(polyval(np.nan, np.nan)))
         self.assertTrue(np.isnan(polyval(2, np.nan)))
         self.assertTrue(np.isnan(polyval(self.a, np.nan))[0] and np.isnan(polyval(self.a, np.nan))[1])
@@ -24,6 +25,7 @@ class TestPolyval(unittest.TestCase):
         self.assertTrue(r2[0][0] == r2[0][1] == r2[1][0] == r2[1][1] == 11)
 
         # Path Coverage
+        # loop none
         b = [1]
         r3 = polyval([5, 4], b)
         self.assertEqual(r3[0], 1)
@@ -32,7 +34,8 @@ class TestPolyval(unittest.TestCase):
         r4 = polyval([[5, 5], [5, 5]], b)
         self.assertTrue(r4[0][0] == r4[0][1] == r4[1][0] == r4[1][1] == 1)
 
-        # loop none
+
+        # loop once
         c = [1, 2]
 
         r5 = polyval([5, 4], c)
@@ -42,7 +45,7 @@ class TestPolyval(unittest.TestCase):
         r6 = polyval([[5, 5], [5, 5]], c)
         self.assertTrue(r6[0][0] == r6[0][1] == r6[1][0] == r6[1][1] == 11)
 
-        # loop once
+        # loop twice
         d = [1, 2, 3]
 
         r7 = polyval([5, 4], d)
