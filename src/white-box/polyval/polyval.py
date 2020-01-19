@@ -1,4 +1,4 @@
-    """
+"""
     Evaluate a polynomial at points x.
     If `c` is of length `n + 1`, this function returns the value
     .. math:: p(x) = c_0 + c_1 * x + ... + c_n * x^n
