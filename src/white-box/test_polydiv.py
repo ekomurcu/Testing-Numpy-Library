@@ -2,11 +2,14 @@ import unittest
 from polydiv import polydiv
 
 
+# This test is for polydiv.py
 class TestPolydiv(unittest.TestCase):
+    # Test that polydiv actually throws an error if trying division by zero
     def test_division_by_zero(self):
         with self.assertRaises(ZeroDivisionError):
             polydiv([3, 2, 1], [0])
 
+    # Test the if-statements on line 38-41
     def test_case_1_and_2(self):
         c1 = [3]
         c2 = [3, 2]
@@ -20,6 +23,7 @@ class TestPolydiv(unittest.TestCase):
         self.assertAlmostEqual(r2[0][0], 0.6)
         self.assertAlmostEqual(r2[1][0], 0)
 
+    # Test the else-statement on line 42-52
     def test_else(self):
         c1 = [1, 2, 3]
         c2 = [3, 2, 1]
