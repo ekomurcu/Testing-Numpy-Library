@@ -1,7 +1,11 @@
+<<<<<<< HEAD:src/white-box/polyval.py
 import numpy as np
 
 def polyval(x, c, tensor=True):
     """
+=======
+"""
+>>>>>>> 4f7350ed649ecb546c973dcfbb980af3ab5cd4c8:src/white-box/polyval/polyval.py
     Evaluate a polynomial at points x.
     If `c` is of length `n + 1`, this function returns the value
     .. math:: p(x) = c_0 + c_1 * x + ... + c_n * x^n
@@ -69,13 +73,15 @@ def polyval(x, c, tensor=True):
     >>> polyval([1,2], coef, tensor=False)
     array([2.,  7.])
     """
+import numpy as np
+def polyval(x, c):
     c = np.array(c, ndmin=1, copy=0)
     if c.dtype.char in '?bBhHiIlLqQpP':
         # astype fails with NA
         c = c + 0.0
     if isinstance(x, (tuple, list)):
         x = np.asarray(x)
-    if isinstance(x, np.ndarray) and tensor:
+    elif isinstance(x, np.ndarray) :
         c = c.reshape(c.shape + (1,)*x.ndim)
 
     c0 = c[-1] + x*0
