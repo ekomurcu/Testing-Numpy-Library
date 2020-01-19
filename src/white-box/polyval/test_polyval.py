@@ -6,7 +6,7 @@ cov.start()
 # .. call your code ..
 
 import numpy as np
-import whitebox as w
+import polyval as p
 #polyval(input,constants)
 
 #Statement and Branch Coverage
