@@ -1,3 +1,5 @@
+import numpy as np
+
 def polyval(x, c, tensor=True):
     """
     Evaluate a polynomial at points x.
